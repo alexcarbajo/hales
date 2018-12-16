@@ -1,9 +1,37 @@
 import React from 'react';
+import Header from '../Header/Header';
 
-export default function Hero({ task: { id, title, state }, onArchiveTask, onPinTask }) {
+function Hero({ loading, tasks, onPinTask, onArchiveTask }) {
+    const events = {
+        onPinTask,
+        onArchiveTask,
+    };
+
+    const LoadingRow = (
+        <>
+            Loading cool state
+        </>
+    );
+
+
+    if (loading) {
+        return (
+            <>
+                {LoadingRow}
+                {LoadingRow}
+            </>
+        );
+    }
+
+    if (tasks.length === 0) {
+        return <>empty</>;
+    }
+
     return (
-        <div className="list-item">
-            <input type="text" value={title} readOnly={true} />
-        </div>
+        <>
+            {tasks.map(task => <Header key={task.id} task={task} {...events} />)}
+        </>
     );
 }
+
+export default Hero;
