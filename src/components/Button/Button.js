@@ -4,38 +4,32 @@ import PropTypes from 'prop-types';
 function Button ({ button: { id, type, style, title, state} }) {
     if (type === 'button') {
         return (
-            <p>
-                <button className={`button button--${style}`}
-                        id={id}
-                        title={title}>
-                    Button {style}
-                </button>
-            </p>
+            <button className={`button button--${style}`}
+                    id={id}
+                    title={title}>
+                Button {style}
+            </button>
         );
     }
 
     if (type === 'input') {
         return (
-            <p>
-                <input type="button"
-                       className={`button button--${style}`}
-                       id={id}
-                       title={title}
-                       value={`Input button ${style}`}
-                />
-            </p>
+            <input type="button"
+                   className={`button button--${style}`}
+                   id={id}
+                   title={title}
+                   value={`Input button ${style}`}
+            />
         )
     }
 
     if (type === 'link') {
         return (
-            <p>
-                <a href="#" className={`button button--${style}`}
-                        id={id}
-                        title={title}>
-                    Link button {style}
-                </a>
-            </p>
+            <a href="#" className={`button button--${style}`}
+                    id={id}
+                    title={title}>
+                Link button {style}
+            </a>
         );
     }
 }

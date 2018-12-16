@@ -439,3 +439,15 @@ template {
 .button--secondary:hover {
   background-color: #064C66;
 }
+
+
+.c-searchForm {
+  padding: 1rem;
+  background: #FFDA48;
+  border-radius: 3px;
+}
+
+.o-highlightBox {
+  margin: 0 auto;
+  max-width: 800px;
+}
