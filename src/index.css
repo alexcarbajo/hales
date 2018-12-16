@@ -363,3 +363,79 @@ template {
 [hidden] {
   display: none;
 }
+
+
+/* font */
+@font-face {
+  font-family: Roobert;
+  src: url(Roobert-SemiBold.woff2);
+}
+
+
+
+/* BUTTON */
+
+.button {
+  display: flex;
+  flex-direction: row;
+  flex: 0 0 100%;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  line-height: normal;
+  -webkit-appearance: none;
+  cursor: pointer;
+  font-family: 'Roobert';
+  text-decoration: none;
+  transition: background-color .125s ease;
+}
+
+.button--primary, .button--primary:visited {
+  width: 100%;
+  border-bottom: 3px solid #196D22;
+  color: white;
+  font-size: 1.25rem;
+  border-radius: 3px;
+  font-weight: 600;
+  padding: 12px;
+  position: relative;
+  z-index: 0;
+  background: linear-gradient(135deg, #208e2f 35%,#25e03f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.button--primary:before {
+  border-radius: inherit;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0; left: 0;
+  opacity: 0;
+  width: 100%;
+  z-index: -1;
+  transition: all .25s ease;
+  background: #208e2f;
+}
+
+.button--primary:hover:before {
+  opacity: 1;
+}
+
+
+.button--secondary, .button--secondary:visited {
+  width: 100%;
+  color: white;
+  font-size: 1rem;
+  border-radius: 3px;
+  font-weight: 600;
+  padding: 12px;
+  background-color: #0A84B2;
+}
+
+.button--secondary:hover {
+  background-color: #064C66;
+}

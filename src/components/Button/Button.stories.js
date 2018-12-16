@@ -7,6 +7,8 @@ import Button from './Button';
 export function createButton(attrs) {
     return {
         id: 'Button' + Math.round(Math.random() * 1000000).toString(),
+        type: 'button',
+        style: 'primary',
         title: 'Test Button',
         state: 'I am a state example',
         updatedAt: Date.now(),
@@ -19,6 +21,7 @@ export const actions = {
 };
 
 storiesOf('Button', module)
-    .add('default', () => <Button button={createButton({ state: 'BUTTON_DEFAULT' })} {...actions} />)
-    .add('primary', () => <Button button={createButton({ state: 'BUTTON_PRIMARY' })} {...actions} />)
-    .add('withIcon', () => <Button button={createButton({ state: 'BUTTON_ICON', icon: 'ICON' })} {...actions} />);
+    .add('primary', () => <Button button={createButton({ style: 'primary', state: 'BUTTON_PRIMARY' })} {...actions} />)
+    .add('secondary', () => <Button button={createButton({ style: 'secondary', state: 'BUTTON_SECONDARY' })} {...actions} />)
+    .add('inputButton', () => <Button button={createButton({ type: 'input', state: 'BUTTON_SECONDARY' })} {...actions} />)
+    .add('linkButton', () => <Button button={createButton({ type: 'link', state: 'BUTTON_SECONDARY' })} {...actions} />);
