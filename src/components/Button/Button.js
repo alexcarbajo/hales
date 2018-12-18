@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function Button ({ button: { id, type, style, title, state} }) {
     if (type === 'button') {
         return (
-            <button className={`button button--${style}`}
+            <button className={`c-button c-button--${style}`}
                     id={id}
                     title={title}>
                 Button {style}
@@ -15,7 +15,7 @@ function Button ({ button: { id, type, style, title, state} }) {
     if (type === 'input') {
         return (
             <input type="button"
-                   className={`button button--${style}`}
+                   className={`c-button c-button--${style}`}
                    id={id}
                    title={title}
                    value={`Input button ${style}`}
@@ -25,7 +25,7 @@ function Button ({ button: { id, type, style, title, state} }) {
 
     if (type === 'link') {
         return (
-            <a href="#" className={`button button--${style}`}
+            <a href="#" className={`c-button c-button--${style}`}
                     id={id}
                     title={title}>
                 Link button {style}

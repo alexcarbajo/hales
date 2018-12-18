@@ -1,3 +1,11 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
 body {
   margin: 0;
   padding: 0;
@@ -375,7 +383,7 @@ template {
 
 /* BUTTON */
 
-.button {
+.c-button {
   display: flex;
   flex-direction: row;
   flex: 0 0 100%;
@@ -394,7 +402,7 @@ template {
   transition: background-color .125s ease;
 }
 
-.button--primary, .button--primary:visited {
+.c-button--primary, .c-button--primary:visited {
   width: 100%;
   border-bottom: 3px solid #196D22;
   color: white;
@@ -407,7 +415,7 @@ template {
   background: linear-gradient(135deg, #208e2f 35%,#25e03f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
-.button--primary:before {
+.c-button--primary:before {
   border-radius: inherit;
   content: '';
   display: block;
@@ -421,12 +429,12 @@ template {
   background: #208e2f;
 }
 
-.button--primary:hover:before {
+.c-button--primary:hover:before {
   opacity: 1;
 }
 
 
-.button--secondary, .button--secondary:visited {
+.c-button--secondary, .c-button--secondary:visited {
   width: 100%;
   color: white;
   font-size: 1rem;
@@ -436,7 +444,7 @@ template {
   background-color: #0A84B2;
 }
 
-.button--secondary:hover {
+.c-button--secondary:hover {
   background-color: #064C66;
 }
 
@@ -449,5 +457,50 @@ template {
 
 .o-highlightBox {
   margin: 0 auto;
-  max-width: 800px;
+  max-width: 950px;
+}
+
+
+/* c-searchInput */
+.c-searchInput {
+  background: white;
+  border: 1px solid #CCAF39;
+  border-radius: 3px;
+  display: flex;
+  position: relative;
+  min-height: 65px;
+}
+
+.c-searchInput.has-error {
+  border: 2px solid red;
+}
+
+.c-searchInput + .c-button {
+  margin-top: 1rem;
+}
+
+.c-searchInput > * {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+}
+
+.c-searchInput__message {
+  position: absolute;
+  display: inline-block;
+  text-align: right;
+  transform: translate(0, -50%);
+  top: 50%;
+  width: 100%;
+}
+
+.c-searchInput__error {
+  background: #FE6A4E;
+  padding: 5px;
+  border-radius: 3px;
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 600;
+  pointer-events: none;
 }
